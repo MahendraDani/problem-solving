@@ -23,7 +23,6 @@ bool isDistinct(vector<int> & v){
   for(int i=0;i<v.size();i++){
     mp[v[i]]++;
   }
-
   for(auto x : mp){
     if(x.second > 1){
       return false;
