@@ -1,11 +1,22 @@
 /*
 Linked List ADT
 class LinkedList
-LinkedList(
+
+Constructors:
+1. LinkedList()
+2. LinkedList(LinkedList* other)
+
+Methods:
+1. void display()-> prints the linked list
+2. int size()-> returns the size of linkedlist
+3. void insert(int pos)
+4. int delete(int pos)
 */
 
 #include <iostream>
 #include <vector>
+
+using namespace std;
 
 class LinkedList {
   public:
@@ -17,11 +28,14 @@ class LinkedList {
     this->next = NULL;
   }
 
-  LinkedList(const LinkedList* other){
+  LinkedList(LinkedList* other){
     this->next = other;
   }
 
-  void display(){
+};
 
-  }
+int main(){
+  LinkedList* head = new LinkedList(13);
+  cout << head->data << "\n";
+  return 0;
 }
