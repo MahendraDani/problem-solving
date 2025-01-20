@@ -28,6 +28,10 @@ int floorElement(int arr[], int n, int target){
   return res;
 }
 
+/*
+ Approach 2: After the termination of simple binary search algorihtm, if the target is NOT present in the array, then the `end` pointer will always point to the floor of the target. Similarly, the `start` will always point to ceil of target
+ */
+
 int main(){
   int arr[] = {1,2,3,4,8,10,10,12,14};
   int n = 9;
