@@ -199,11 +199,32 @@ int search_in_nearly_sorted(int arr[], int n, int x){
   return ans;
 }
 
+int ashu(int arr[], int n){
+  int ans =-1, start =0, end = n-1;
+  int mid;
+
+  while(start <= end){
+    mid = start + (end - start)/2;
+    int next = (mid + 1)%n;
+    int prev = (mid + n - 1)%n;
+
+    if(arr[mid] > arr[prev] && arr[mid] > arr[next]){
+      ans = arr[mid];
+      break;
+    }else if(arr[mid] < arr[next]){
+      start = mid + 1;
+    }else{
+      end = mid - 1;
+    }
+  }
+  return ans;
+}
+
 int main(){
-  int arr[] = {5,10,12,13,14,15,30,20,40};
-  int n = 9;
-  int x = 20;
-  cout << search_in_nearly_sorted(arr,n,x) << "\n";
+  int arr[] = {1,3,9,10,11,12,16,7,6,5,4};
+  int n = 11;
+  int x = 4;
+  cout << search_in_biotonic(arr,n,x) << "\n";
 
   return 0;
 }
