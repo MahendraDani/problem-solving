@@ -46,11 +46,29 @@ int maxSum(int a[], int n, int k){
   }
   return ans;
 }
+
+int maxSubSum(int a[], int n, int k){
+  int ans=-1,sum=0;
+  
+  for(int i=0;i<k;i++){
+    sum+=a[i];
+  }
+  int start=0, end=k;
+  while(end < n-1){
+    sum = sum - a[start] + a[end];
+    ans = max(ans,sum);
+    start++;
+    end++;
+  }
+  return ans;
+}
+
 int main(){
   int arr[] = {2,3,5,2,9,7,1};
   int n = 7;
   int k =2;
-  cout << maxSubArraySum(arr,n) << "\n";
+//  cout << maxSubArraySum(arr,n) << "\n";
   cout << maxSum(arr,n,2) << "\n";
+  cout << maxSubSum(arr,n,2) << "\n";
   return 0;
 }
